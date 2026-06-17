@@ -32,14 +32,20 @@
         }
     </style>
 </head>
-<body class="bg-pattern-light text-stone-800 antialiased overflow-x-hidden" x-data="{ 
-    isOpen: false, 
-    isPlaying: false, 
-    tamu: 'Bapak/Ibu/Saudara/i' 
-}">
+<body class="bg-pattern-light text-stone-800 antialiased overflow-x-hidden" 
+      x-data="{ 
+          isOpen: false, 
+          isPlaying: false, 
+          tamu: 'Bapak/Ibu/Saudara/i' 
+      }"
+      x-init="
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.has('tamu')) tamu = urlParams.get('tamu');
+      ">
 
-   <audio id="bgMusic" loop>
-        <source src="backsound.mp3" type="audio/mpeg">
+   <!-- AUDIO BACKSOUND (Menggunakan Link Audio Online Stabil) -->
+   <audio id="bgMusic" loop preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" type="audio/mpeg">
    </audio>
 
     <div x-show="isOpen" x-cloak class="fixed bottom-6 right-6 z-50">
@@ -54,6 +60,7 @@
         </button>
     </div>
 
+    <!-- COVER SCREEN -->
     <div x-show="!isOpen" 
          x-transition:leave="transition ease-in-out duration-1000 transform -translate-y-full"
          class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#0F2921] to-[#1E4D3E] text-stone-100 p-4 md:p-8 overflow-hidden">
@@ -67,8 +74,9 @@
                 <p class="text-stone-300/70 text-[9px] md:text-xs tracking-widest font-light uppercase">KAMI MENGUNDANG ANDA UNTUK MERAYAKAN KHITANAN</p>
                 <h1 class="font-luxury text-4xl md:text-5xl text-[#D4AF37] tracking-wide drop-shadow-lg">ZAHRAN</h1>
                 
+                <!-- FOTO UTAMA (Menggunakan Link Gambar Online Sampel Berfungsi) -->
                 <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-2 border-[#D4AF37] p-1.5 bg-[#0F2921] shadow-2xl overflow-hidden">
-                    <img src="foto-zahran.jpeg" alt="Foto Zahran" class="w-full h-full rounded-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?q=80&w=400" alt="Foto Zahran" class="w-full h-full rounded-full object-cover">
                 </div>
 
                 <p class="font-serif-italic tracking-wide text-lg md:text-xl text-stone-100 italic">Fakhri Zahran Khoiry</p>
@@ -87,6 +95,7 @@
         </div>
     </div>
 
+    <!-- MAIN CONTENT -->
     <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-1000 opacity-0" class="relative">
         
         <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -105,6 +114,7 @@
                 </div>
             </section>
 
+            <!-- COUNTDOWN SECTION -->
             <section class="w-full">
                 <div class="border border-[#1B4235]/10 bg-white p-6 md:p-10 rounded-3xl shadow-sm border-t-4 border-t-[#1B4235] text-center">
                     <span class="text-[9px] md:text-xs tracking-[0.3em] text-[#1B4235] font-bold uppercase block mb-3">Tasyakuran Khitanan</span>
@@ -206,8 +216,9 @@
         </div>
     </div>
 
+    <!-- SCRIPT HITUNG MUNDUR (Sudah Diperbaiki Typo Spasinya) -->
     <script>
-        const targetDate = new Date("July 12, 2026 09:00:00").getTime();
+        const targetDate = new Date("July 11, 2026 09:00:00").getTime();
 
         setInterval(() => {
             const now = new Date().getTime();
@@ -230,7 +241,7 @@
                 document.getElementById("days").innerText = days < 10 ? "0" + days : days;
                 document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
                 document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-                document.getEl ementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
             }
         }, 1000);
     </script>
