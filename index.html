@@ -110,7 +110,7 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-1000 opacity-0" class="relative">
+    <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-1000 opacity-0" class="relative z-10">
         
         <!-- Animated Particles -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -122,7 +122,7 @@
         <div class="max-w-md md:max-w-4xl mx-auto px-4 py-8 md:py-16 relative z-10 space-y-6 md:space-y-8">
 
             <!-- KARTU KEPADA TAMU (NAVY GOLD) -->
-            <section class="w-full">
+            <section class="w-full relative z-10">
                 <div class="border border-[#D4AF37]/20 bg-gradient-to-r from-[#0F1E36] to-[#162A48] p-4 rounded-2xl shadow-xl text-center relative overflow-hidden">
                     <div class="absolute inset-1 border border-[#D4AF37]/5 rounded-xl pointer-events-none"></div>
                     <span class="text-[9px] tracking-[0.2em] text-slate-400 font-medium uppercase block mb-1">Selamat Datang Bapak/Ibu/Saudara/i:</span>
@@ -131,7 +131,7 @@
             </section>
 
             <!-- COUNTDOWN SECTION (NAVY GOLD LUXURY) -->
-            <section class="w-full">
+            <section class="w-full relative z-10">
                 <div class="border border-[#D4AF37]/20 bg-gradient-to-b from-[#0F1E36] to-[#0A1220] p-6 md:p-10 rounded-3xl shadow-2xl border-b-4 border-b-[#C5A03A] text-center relative">
                     <div class="absolute inset-3 border border-[#D4AF37]/5 rounded-2xl pointer-events-none"></div>
                     
@@ -165,10 +165,10 @@
             </section>
 
             <!-- TWO COLUMN DETAILED CARDS -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch relative z-20">
                 
                 <!-- LEFT CARD: ACARA & UNDANGAN -->
-                <section class="text-center flex flex-col h-full">
+                <section class="text-center flex flex-col h-full relative z-10">
                     <div class="bg-gradient-to-b from-[#0F1E36] to-[#0A1220] border border-[#D4AF37]/20 p-6 md:p-8 rounded-3xl shadow-2xl flex-1 flex flex-col justify-center relative">
                         <div class="absolute inset-3 border border-[#D4AF37]/5 rounded-2xl pointer-events-none"></div>
                         
@@ -191,65 +191,29 @@
                                 </p>
                             </div>
 
-                            <!-- Turut Mengundang List Layout Premium & Rapi -->
+                            <!-- Turut Mengundang List Layout -->
                             <div class="border-t border-slate-800/80 pt-5 text-center">
-                                <p class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#E5C060] mb-4">Turut Mengundang:</p>
-                                
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-left max-w-md mx-auto text-xs font-light px-4">
-                                    <!-- Kolom Kiri / Baris Atas -->
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">1.</span>
-                                        <div>
-                                            <span class="text-slate-200">Bpk. Sukardi</span>
-                                            <span class="block text-[10px] text-slate-400 italic mt-0.5">(Ketua RW 024)</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">2.</span>
-                                        <div>
-                                            <span class="text-slate-200">Bpk. LuluK Muttaqin</span>
-                                            <span class="block text-[10px] text-slate-400 italic mt-0.5">(Ketua RT 012 RW 024)</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">3.</span>
-                                        <span class="text-slate-200">Bpk. Ustad Abdul Wahid A.</span>
-                                    </div>
-
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">4.</span>
-                                        <span class="text-slate-200">Bpk. Pariman</span>
-                                    </div>
-
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">5.</span>
-                                        <span class="text-slate-200">Bpk. Nursalim</span>
-                                    </div>
-
-                                    <div class="flex items-start gap-2">
-                                        <span class="text-[#C5A03A] font-semibold">6.</span>
-                                        <span class="text-slate-200">Bpk. Samsuri</span>
-                                    </div>
-
-                                    <!-- Kolom Penuh untuk Segenap Pengurus -->
-                                    <div class="flex items-start gap-2 sm:col-span-2 border-t border-slate-800/50 pt-2 mt-1">
-                                        <span class="text-[#C5A03A] font-semibold">7.</span>
-                                        <span class="text-slate-200 font-medium tracking-wide">Segenap Pengurus RT 012 RW 024</span>
-                                    </div>
-                                </div>
+                                <p class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#E5C060] mb-3">Turut Mengundang:</p>
+                                <ul class="text-[11px] md:text-xs text-slate-300 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-left max-w-sm mx-auto font-light pl-4 sm:pl-0">
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">1.</span> <span>Bpk. Sukardi <i class="text-slate-400 block text-[10px]">(Ketua RW O24)</i></span></li>
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">2.</span> <span>Bpk. LuluK Muttaqin <i class="text-slate-400 block text-[10px]">(Ketua RT 012 RW 024)</i></span></li>
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">3.</span> <span>Bpk. Ustad Abdul Wahid A.</span></li>
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">4.</span> <span>Bpk. Pariman</span></li>
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">5.</span> <span>Bpk. Nursalim</span></li>
+                                    <li class="flex items-start gap-1"><span class="text-[#C5A03A]">6.</span> <span>Bpk. Samsuri</span></li>
+                                    <li class="flex items-start gap-1 sm:col-span-2"><span class="text-[#C5A03A]">7.</span> <span>Segenap Pengurus RT 012 RW 024</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- RIGHT CARD: WAKTU & TEMPAT -->
-                <section class="flex flex-col h-full">
+                <section class="flex flex-col h-full relative z-30">
                     <div class="bg-gradient-to-b from-[#0F1E36] to-[#0A1220] border border-[#D4AF37]/20 text-slate-100 rounded-3xl shadow-2xl p-6 md:p-8 text-center relative overflow-hidden flex-1 flex flex-col justify-center">
                         <div class="absolute inset-3 border border-[#D4AF37]/5 rounded-2xl pointer-events-none"></div>
                         
-                        <div class="space-y-6 relative z-10">
+                        <div class="space-y-6 relative z-30">
                             <h3 class="font-luxury text-xs tracking-widest text-[#D4AF37] uppercase font-bold">Waktu & Tempat</h3>
                             
                             <div class="space-y-1">
@@ -260,14 +224,14 @@
 
                             <hr class="w-12 mx-auto border-slate-800">
 
-                            <div class="space-y-6">
+                            <div class="space-y-6 relative z-40">
                                 <p class="text-slate-300 text-xs md:text-sm font-light leading-relaxed px-2">
                                     <strong class="text-[#F3E5AB] text-sm md:text-base block mb-1.5 font-semibold">Kediaman Keluarga Besar Bapak Ejang Dudi & Ibu Yatmi Asih</strong>
                                     (Griya Asri 2 Blok H2 No 20 RT 012 RW 024)
                                 </p>
                                 
-                                <a href="https://maps.app.goo.gl/E2FLYTLoXHxQraiR7" target="_blank" 
-                                   class="inline-flex items-center gap-2 bg-gradient-to-r from-[#C5A03A] to-[#E5C060] text-[#0B1524] font-bold text-[9px] md:text-[10px] tracking-widest uppercase px-6 py-4 rounded-xl shadow-md hover:brightness-110 transition-all cursor-pointer">
+                                <a href="https://maps.app.goo.gl/E2FLYTLoXHxQraiR7" target="_blank" rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-2 bg-gradient-to-r from-[#C5A03A] to-[#E5C060] text-[#0B1524] font-bold text-[9px] md:text-[10px] tracking-widest uppercase px-6 py-4 rounded-xl shadow-md hover:brightness-110 transition-all cursor-pointer relative z-50">
                                     📌 GOOGLE MAPS LOKASI
                                 </a>
                             </div>
@@ -278,7 +242,7 @@
             </div> 
             
             <!-- FOOTER -->
-            <footer class="text-slate-500 text-[8px] md:text-[10px] tracking-[0.2em] uppercase pt-6 text-center">
+            <footer class="text-slate-500 text-[8px] md:text-[10px] tracking-[0.2em] uppercase pt-6 text-center relative z-10">
                 <p>© 2026 Tasyakuran Khitanan Zahran.<br><span class="text-slate-600/70 text-[7px] md:text-[8px]">Created By Mas Dapp.</span></p>
             </footer>
 
