@@ -47,10 +47,11 @@
       }"
       x-init="
           const urlParams = new URLSearchParams(window.location.search);
-          if (urlParams.has('tamu') && urlParams.get('tamu').trim() !== '') {
-              tamu = decodeURIComponent(urlParams.get('tamu'));
+          const namaTamu = urlParams.get('tamu');
+          if (namaTamu && namaTamu.trim() !== '') {
+              tamu = namaTamu;
           }
-      }">
+      +">
 
    <audio id="bgMusic" loop preload="auto">
         <source src="backsound.mp3" type="audio/mpeg">
