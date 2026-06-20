@@ -24,15 +24,15 @@
         .font-serif-italic { font-family: 'Playfair Display', serif; }
         [x-cloak] { display: none !important; }
         
-        /* Background Pattern Premium */
+        /* Background Pattern Premium Modern */
         .bg-pattern-light {
-            background-color: #FBFBFA;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M9 24c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6zm30 15c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z' fill='%231b4235' fill-opacity='0.02'/%3E%3C/svg%3E");
+            background-color: #F8F9FA;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 0l40 40-40 40L0 40z' fill='%230f1e36' fill-opacity='0.015' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-            50% { opacity: 0.3; }
+            50% { opacity: 0.25; }
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
         .particle {
@@ -40,7 +40,7 @@
         }
     </style>
 </head>
-<body class="bg-pattern-light text-stone-800 antialiased overflow-x-hidden" 
+<body class="bg-pattern-light text-slate-800 antialiased overflow-x-hidden" 
       x-data="{ 
           isOpen: false, 
           isPlaying: false, 
@@ -51,14 +51,14 @@
           if (urlParams.has('tamu')) tamu = urlParams.get('tamu');
       ">
 
-   <!-- AUDIO BACKSOUND (Menggunakan Link Audio Online Stabil) -->
+   <!-- AUDIO BACKSOUND -->
    <audio id="bgMusic" loop preload="auto">
         <source src="backsound.mp3" type="audio/mpeg">
    </audio>
 
     <div x-show="isOpen" x-cloak class="fixed bottom-6 right-6 z-50">
         <button @click="const audio = document.getElementById('bgMusic'); if(isPlaying) { audio.pause(); isPlaying = false; } else { audio.play(); isPlaying = true; }" 
-                class="bg-[#1B4235] text-[#D4AF37] p-4 rounded-full shadow-lg border border-[#D4AF37]/30 transition-all transform hover:scale-110 flex items-center justify-center cursor-pointer">
+                class="bg-[#0F1E36] text-[#D4AF37] p-4 rounded-full shadow-xl border border-[#D4AF37]/30 transition-all transform hover:scale-110 flex items-center justify-center cursor-pointer">
             <template x-if="isPlaying">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
             </template>
@@ -71,33 +71,35 @@
     <!-- COVER SCREEN -->
     <div x-show="!isOpen" 
          x-transition:leave="transition ease-in-out duration-1000 transform -translate-y-full"
-         class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#0F2921] to-[#1E4D3E] text-stone-100 p-4 md:p-8 overflow-hidden">
+         class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-tr from-[#0B1524] to-[#172A46] text-slate-100 p-4 md:p-8 overflow-hidden">
         
-        <div class="w-full max-w-sm md:max-w-2xl bg-[#0F2921]/60 backdrop-blur-md border border-[#D4AF37]/20 rounded-3xl py-10 px-6 md:px-12 text-center relative shadow-2xl space-y-6 md:space-y-8">
-            <div class="absolute inset-3 border border-[#D4AF37]/10 rounded-2xl pointer-events-none"></div>
+        <div class="w-full max-w-sm md:max-w-2xl bg-[#0B1524]/50 backdrop-blur-lg border border-[#D4AF37]/20 rounded-3xl py-12 px-6 md:px-12 text-center relative shadow-2xl space-y-6 md:space-y-8">
+            <div class="absolute inset-4 border border-[#D4AF37]/10 rounded-2xl pointer-events-none"></div>
 
-            <div class="text-[#D4AF37] tracking-[0.3em] text-[10px] md:text-xs font-semibold">WALIMATUL KHITAN</div>
+            <div class="text-[#D4AF37] tracking-[0.4em] text-[9px] md:text-xs font-bold uppercase">Walimatul Khitan</div>
 
             <div class="space-y-4 md:space-y-6">
-                <p class="text-stone-300/70 text-[9px] md:text-xs tracking-widest font-light uppercase">KAMI MENGUNDANG ANDA UNTUK MERAYAKAN KHITANAN</p>
-                <h1 class="font-luxury text-4xl md:text-5xl text-[#D4AF37] tracking-wide drop-shadow-lg">ZAHRAN</h1>
+                <p class="text-slate-400 text-[9px] md:text-xs tracking-widest font-light uppercase">KAMI MENGUNDANG ANDA UNTUK MERAYAKAN KHITANAN</p>
+                <h1 class="font-luxury text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#E5C060] to-[#F3E5AB] tracking-wide drop-shadow-md">ZAHRAN</h1>
                 
-                <!-- FOTO UTAMA -->
-                <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-2 border-[#D4AF37] p-1.5 bg-[#0F2921] shadow-2xl overflow-hidden">
-                    <img src="foto-zahran.jpeg" alt="Foto Zahran" class="w-full h-full rounded-full object-cover">
+                <!-- FOTO UTAMA DENGAN FRAME LEBIH MODERN -->
+                <div class="w-36 h-36 md:w-44 md:h-44 mx-auto rounded-2xl border-2 border-[#D4AF37]/60 p-2 bg-[#0B1524] shadow-2xl overflow-hidden transform rotate-3">
+                    <img src="foto-zahran.jpeg" alt="Foto Zahran" class="w-full h-full rounded-xl object-cover transform -rotate-3 scale-110">
                 </div>
 
-                <p class="font-serif-italic tracking-wide text-lg md:text-xl text-stone-100 italic">Fakhri Zahran Khoiry</p>
-                <p class="text-stone-400 text-[9px] md:text-xs tracking-widest uppercase font-medium max-w-xs mx-auto">( Putra ke 3 Dari Bapak Ejang Dudi & Ibu Yatmi Asih )</p>
+                <p class="font-serif-italic tracking-wide text-xl md:text-2xl text-[#F3E5AB] italic font-medium">Fakhri Zahran Khoiry</p>
+                <p class="text-slate-400 text-[9px] md:text-[10px] tracking-widest uppercase font-light max-w-xs mx-auto">( Putra ke 3 Dari Bapak Ejang Dudi & Ibu Yatmi Asih )</p>
             </div>
 
-            <div class="w-full max-w-xs mx-auto">
-                <p class="text-[10px] text-stone-400 tracking-wider mb-1 uppercase">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 class="text-[#D4AF37] font-semibold text-base md:text-lg tracking-wide mb-4" x-text="tamu"></h3>
+            <div class="w-full max-w-xs mx-auto border-t border-slate-700/50 pt-5 space-y-4">
+                <div>
+                    <p class="text-[9px] text-slate-400 tracking-wider mb-1 uppercase">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                    <h3 class="text-[#D4AF37] font-bold text-base md:text-lg tracking-wide" x-text="tamu"></h3>
+                </div>
                 
                 <button @click="isOpen = true; const audio = document.getElementById('bgMusic'); audio.play(); isPlaying = true;" 
-                        class="w-full bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-[#0F2921] font-bold px-6 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.2)] hover:brightness-110 transition-all tracking-widest text-[10px] cursor-pointer">
-                    💌 OPEN INVITATION
+                        class="w-full bg-gradient-to-r from-[#C5A03A] to-[#E5C060] text-[#0B1524] font-bold px-6 py-4 rounded-xl shadow-[0_4px_20px_rgba(197,160,58,0.25)] hover:brightness-110 transition-all tracking-widest text-[10px] cursor-pointer uppercase">
+                    💌 Open Invitation
                 </button>
             </div>
         </div>
@@ -107,47 +109,46 @@
     <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-1000 opacity-0" class="relative">
         
         <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-            <div class="particle bg-[#D4AF37]/20 w-2.5 h-2.5 rounded-full left-[10%]" style="animation-delay: 0s; animation-duration: 9s;"></div>
-            <div class="particle bg-[#1B4235]/5 w-4 h-4 rounded-full left-[50%]" style="animation-delay: 3s; animation-duration: 13s;"></div>
-            <div class="particle bg-[#D4AF37]/15 w-2 h-2 rounded-full left-[85%]" style="animation-delay: 1s; animation-duration: 7s;"></div>
+            <div class="particle bg-[#D4AF37]/15 w-2 h-2 rounded-full left-[15%]" style="animation-delay: 0s; animation-duration: 10s;"></div>
+            <div class="particle bg-[#0F1E36]/5 w-3.5 h-3.5 rounded-full left-[45%]" style="animation-delay: 2s; animation-duration: 12s;"></div>
+            <div class="particle bg-[#D4AF37]/10 w-2.5 h-2.5 rounded-full left-[75%]" style="animation-delay: 1.5s; animation-duration: 8s;"></div>
         </div>
 
-        <div class="max-w-md md:max-w-5xl mx-auto px-4 py-8 md:py-16 relative z-10 space-y-6 md:space-y-8">
+        <div class="max-w-md md:max-w-4xl mx-auto px-4 py-8 md:py-16 relative z-10 space-y-6 md:space-y-8">
 
             <section class="w-full">
-                <div class="border border-[#D4AF37]/30 bg-gradient-to-r from-[#0F2921] to-[#1B4235] p-4 md:p-6 rounded-2xl shadow-sm text-center text-white relative overflow-hidden">
-                    <div class="absolute inset-1.5 border border-[#D4AF37]/10 rounded-xl pointer-events-none"></div>
-                    <span class="text-[9px] tracking-[0.2em] text-[#D4AF37] font-medium uppercase block mb-1">Selamat Datang Bapak/Ibu/Saudara/i:</span>
-                    <h2 class="text-base md:text-xl font-semibold tracking-wide text-[#F3E5AB]" x-text="tamu"></h2>
+                <div class="border border-slate-200 bg-white p-4 rounded-2xl shadow-sm text-center relative overflow-hidden">
+                    <span class="text-[9px] tracking-[0.2em] text-slate-400 font-semibold uppercase block mb-1">Selamat Datang Bapak/Ibu/Saudara/i:</span>
+                    <h2 class="text-base md:text-lg font-bold tracking-wide text-[#0F1E36]" x-text="tamu"></h2>
                 </div>
             </section>
 
             <!-- COUNTDOWN SECTION -->
             <section class="w-full">
-                <div class="border border-[#1B4235]/10 bg-white p-6 md:p-10 rounded-3xl shadow-sm border-t-4 border-t-[#1B4235] text-center">
-                    <span class="text-[9px] md:text-xs tracking-[0.3em] text-[#1B4235] font-bold uppercase block mb-3">Tasyakuran Khitanan</span>
-                    <h2 class="font-luxury text-3xl md:text-4xl text-[#1B4235] mb-2">ZAHRAN</h2>
-                    <h3 class="font-serif-italic text-base md:text-lg text-stone-600 italic mb-6">Fakhri Zahran Khoiry</h3>
+                <div class="border border-slate-200/60 bg-white p-6 md:p-10 rounded-3xl shadow-sm border-b-4 border-b-[#0F1E36] text-center relative">
+                    <span class="text-[9px] md:text-xs tracking-[0.3em] text-[#C5A03A] font-bold uppercase block mb-2">Tasyakuran Khitanan</span>
+                    <h2 class="font-luxury text-3xl md:text-4xl text-[#0F1E36] mb-1">ZAHRAN</h2>
+                    <h3 class="font-serif-italic text-base md:text-lg text-slate-500 italic mb-6">Fakhri Zahran Khoiry</h3>
                     
-                    <div class="flex justify-center items-center gap-3 border-t border-stone-100 pt-5 max-w-[320px] mx-auto">
+                    <div class="flex justify-center items-center gap-3 border-t border-slate-100 pt-6 max-w-[320px] mx-auto">
                         <div class="text-center w-14">
-                            <span id="days" class="text-2xl md:text-3xl font-bold text-[#1B4235]">00</span>
-                            <p class="text-[8px] md:text-[9px] text-stone-400 uppercase tracking-widest mt-0.5">Hari</p>
+                            <span id="days" class="text-2xl md:text-3xl font-bold text-[#0F1E36]">00</span>
+                            <p class="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest mt-1">Hari</p>
                         </div>
-                        <div class="text-stone-200 text-lg font-light">:</div>
+                        <div class="text-slate-200 text-lg font-light">:</div>
                         <div class="text-center w-14">
-                            <span id="hours" class="text-2xl md:text-3xl font-bold text-[#1B4235]">00</span>
-                            <p class="text-[8px] md:text-[9px] text-stone-400 uppercase tracking-widest mt-0.5">Jam</p>
+                            <span id="hours" class="text-2xl md:text-3xl font-bold text-[#0F1E36]">00</span>
+                            <p class="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest mt-1">Jam</p>
                         </div>
-                        <div class="text-stone-200 text-lg font-light">:</div>
+                        <div class="text-slate-200 text-lg font-light">:</div>
                         <div class="text-center w-14">
-                            <span id="minutes" class="text-2xl md:text-3xl font-bold text-[#1B4235]">00</span>
-                            <p class="text-[8px] md:text-[9px] text-stone-400 uppercase tracking-widest mt-0.5">Menit</p>
+                            <span id="minutes" class="text-2xl md:text-3xl font-bold text-[#0F1E36]">00</span>
+                            <p class="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest mt-1">Menit</p>
                         </div>
-                        <div class="text-stone-200 text-lg font-light">:</div>
-                        <div class="text-center w-14 bg-[#1B4235] rounded-xl py-0.5 shadow-sm">
+                        <div class="text-slate-200 text-lg font-light">:</div>
+                        <div class="text-center w-14 bg-[#0F1E36] rounded-xl py-1 shadow-sm">
                             <span id="seconds" class="text-2xl md:text-3xl font-bold text-[#D4AF37]">00</span>
-                            <p class="text-[7px] md:text-[8px] text-white/80 uppercase tracking-widest mt-0.5">Detik</p>
+                            <p class="text-[7px] md:text-[8px] text-slate-300 uppercase tracking-widest mt-0.5">Detik</p>
                         </div>
                     </div>
                 </div>
@@ -156,29 +157,29 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
                 
                 <section class="text-center flex flex-col h-full">
-                    <div class="bg-white border border-stone-100 p-6 md:p-8 rounded-3xl shadow-sm space-y-6 flex-1 flex flex-col justify-center">
-                        <p class="text-xs tracking-widest uppercase font-semibold text-[#1B4235]">Assalamu'alaikum Wr. Wb.</p>
-                        <p class="text-xs md:text-sm leading-relaxed text-stone-500 font-light">
+                    <div class="bg-white border border-slate-200/60 p-6 md:p-8 rounded-3xl shadow-sm space-y-6 flex-1 flex flex-col justify-center">
+                        <p class="text-xs tracking-widest uppercase font-bold text-[#C5A03A]">Assalamu'alaikum Wr. Wb.</p>
+                        <p class="text-xs md:text-sm leading-relaxed text-slate-500 font-light">
                             Dengan memohon rahmat dan ridho Allah SWT, kami sekeluarga bermaksud mengundang Bapak/Ibu/Saudara/i dalam acara tasyakuran khitanan putra kami:
                         </p>
                         
-                        <div class="py-2">
-                            <h2 class="font-luxury text-xl md:text-2xl text-[#1B4235] tracking-wider">FAKHRI ZAHRAN KHOIRY</h2>
-                            <p class="text-stone-400 text-[10px] tracking-widest mt-1 uppercase font-medium">( Zahran )</p>
-                            <p class="text-stone-500 text-[9px] md:text-[10px] tracking-widest mt-2 uppercase font-medium max-w-xs mx-auto">( Putra ke 3 Dari Bapak Ejang Dudi & Ibu Yatmi Asih )</p>
+                        <div class="py-1">
+                            <h2 class="font-luxury text-xl md:text-2xl text-[#0F1E36] tracking-wider font-bold">FAKHRI ZAHRAN KHOIRY</h2>
+                            <p class="text-slate-400 text-[10px] tracking-widest mt-1 uppercase font-semibold">( Zahran )</p>
+                            <p class="text-slate-500 text-[9px] md:text-[10px] tracking-widest mt-2 uppercase font-medium max-w-xs mx-auto">( Putra ke 3 Dari Bapak Ejang Dudi & Ibu Yatmi Asih )</p>
                         </div>
 
-                        <div class="bg-[#1B4235]/5 p-5 rounded-2xl border-l-4 border-[#1B4235] text-left">
-                            <p class="font-serif-italic italic text-xs md:text-sm text-[#1B4235] leading-relaxed">
+                        <div class="bg-[#0F1E36]/5 p-5 rounded-2xl border-t-2 border-[#C5A03A] text-center">
+                            <p class="font-serif-italic italic text-xs md:text-sm text-[#0F1E36] leading-relaxed">
                                 "Ya Allah, muliakanlah anak kami ini, panjangkanlah umurnya, terangilah hatinya, teguhkanlah imannya, perbaikilah amalnya, and lapangkanlah rezekinya. Jadikanlah ia anak yang saleh yang berbakti kepada orang tua dan agama."
                             </p>
                         </div>
 
-                        <div class="border-t border-stone-100 pt-4 text-center">
-                            <p class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#1B4235] mb-2">Turut Mengundang:</p>
-                            <ul class="text-xs text-stone-500 space-y-1 font-light">
-                                <li>1. Bpk. Sukardi Ketua RW O24</li>
-                                <li>2. Bpk. LuluK Muttaqin Ketua RT 012 RW 024</li>
+                        <div class="border-t border-slate-100 pt-5 text-center">
+                            <p class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#0F1E36] mb-3">Turut Mengundang:</p>
+                            <ul class="text-xs text-slate-500 space-y-1.5 font-light">
+                                <li>1. Bapak Sukardi <span class="text-slate-400 text-[11px]">Ketua RW O24</span></li>
+                                <li>2. Bapak LuluK Muttaqin <span class="text-slate-400 text-[11px]">Ketua RT 012 RW 024</span></li>
                                 <li>3. Bpk. Ustad Abdul Wahid Abdullah</li>
                                 <li>4. Bpk. Pariman</li>
                                 <li>5. Bpk. Nursalim</li>
@@ -190,28 +191,28 @@
                 </section>
 
                 <section class="flex flex-col h-full">
-                    <div class="bg-gradient-to-b from-[#0F2921] to-[#1B4235] text-stone-100 rounded-3xl shadow-lg p-6 md:p-8 text-center border border-[#D4AF37]/20 relative overflow-hidden flex-1 flex flex-col justify-center">
-                        <div class="absolute inset-2.5 md:inset-3 border border-[#D4AF37]/15 rounded-2xl pointer-events-none"></div>
+                    <div class="bg-gradient-to-b from-[#0F1E36] to-[#0B1524] text-slate-100 rounded-3xl shadow-lg p-6 md:p-8 text-center border border-slate-700/40 relative overflow-hidden flex-1 flex flex-col justify-center">
+                        <div class="absolute inset-3 border border-[#D4AF37]/10 rounded-2xl pointer-events-none"></div>
                         
-                        <div class="space-y-5 md:space-y-6 relative z-10">
-                            <h3 class="font-luxury text-sm tracking-widest text-[#D4AF37]">WAKTU & TEMPAT</h3>
+                        <div class="space-y-6 relative z-10">
+                            <h3 class="font-luxury text-xs tracking-widest text-[#D4AF37] uppercase font-bold">Waktu & Tempat</h3>
                             
                             <div class="space-y-1">
                                 <p class="font-serif-italic italic text-2xl text-[#D4AF37]">Sabtu</p>
-                                <p class="text-xl font-semibold tracking-wide">11 Juli 2026</p>
-                                <p class="text-stone-300 text-[11px] font-light tracking-wider">Pukul 09.00 WIB s/d Selesai</p>
+                                <p class="text-xl font-bold tracking-wide">11 Juli 2026</p>
+                                <p class="text-slate-300 text-[11px] font-light tracking-wider">Pukul 09.00 WIB s/d Selesai</p>
                             </div>
 
-                            <hr class="w-16 mx-auto border-[#D4AF37]/20">
+                            <hr class="w-12 mx-auto border-slate-700">
 
-                            <div class="space-y-5">
-                                <p class="text-stone-200 text-xs md:text-sm font-light leading-relaxed px-2">
-                                    <strong class="text-white text-sm md:text-base block mb-1">Kediaman Keluarga Besar Bapak Ejang Dudi & Ibu Yatmi Asih</strong>
+                            <div class="space-y-6">
+                                <p class="text-slate-300 text-xs md:text-sm font-light leading-relaxed px-2">
+                                    <strong class="text-white text-sm md:text-base block mb-1.5 font-semibold">Kediaman Keluarga Besar Bapak Ejang Dudi & Ibu Yatmi Asih</strong>
                                     (Griya Asri 2 Blok H2 No 20 RT 012 RW 024)
                                 </p>
                                 
                                 <a href="https://maps.app.goo.gl/E2FLYTLoXHxQraiR7" target="_blank" 
-                                   class="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-[#0F2921] font-bold text-[9px] md:text-[10px] tracking-widest uppercase px-6 py-3.5 rounded-xl shadow-md hover:brightness-110 transition-all cursor-pointer">
+                                   class="inline-flex items-center gap-2 bg-gradient-to-r from-[#C5A03A] to-[#E5C060] text-[#0B1524] font-bold text-[9px] md:text-[10px] tracking-widest uppercase px-6 py-4 rounded-xl shadow-md hover:brightness-110 transition-all cursor-pointer">
                                     📌 GOOGLE MAPS LOKASI
                                 </a>
                             </div>
@@ -221,8 +222,8 @@
 
             </div> 
             
-            <footer class="text-stone-400 text-[8px] md:text-[10px] tracking-[0.2em] uppercase pt-6 text-center">
-                <p>© 2026 Tasyakuran Khitanan Zahran.<br><span class="text-[#1B4235]/60 text-[7px] md:text-[8px]">Created By Mas Dapp.</span></p>
+            <footer class="text-slate-400 text-[8px] md:text-[10px] tracking-[0.2em] uppercase pt-6 text-center">
+                <p>© 2026 Tasyakuran Khitanan Zahran.<br><span class="text-slate-500/60 text-[7px] md:text-[8px]">Created By Mas Dapp.</span></p>
             </footer>
 
         </div>
